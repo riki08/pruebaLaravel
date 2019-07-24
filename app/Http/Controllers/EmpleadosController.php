@@ -97,9 +97,9 @@ class EmpleadosController extends Controller
     public function destroy($id)
     {
         $empleado = Empleados::findOrFail($id);
-        //borra a dicha fruta
+        
         $empleado->delete();
-        //redirecciona al index de frutas
+        
         return redirect()->route('empleados.index');
     }
 }

@@ -73,9 +73,7 @@ class CompaniasController extends Controller
      */
     public function edit($id)
     {
-         ///busca la fruta con ese id
          $compania = Companias::findOrFail($id);        
-         //devuelve la vista para editar a una fruta
          return view('companias.edit', compact('compania'));
     }
 
@@ -107,9 +105,9 @@ class CompaniasController extends Controller
     public function destroy($id)
     {
         $compania = Companias::findOrFail($id);
-        //borra a dicha fruta
+        
         $compania->delete();
-        //redirecciona al index de frutas
+
         return redirect()->route('companias.index');
     }
 }
